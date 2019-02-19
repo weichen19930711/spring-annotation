@@ -51,6 +51,9 @@ import org.springframework.context.annotation.Configuration;
  *
  * Spring底层对 BeanPostProcessor 的使用；
  * 		bean赋值，注入其他组件，@Autowired，生命周期注解功能，@Async,xxx BeanPostProcessor;
+ * 	ApplicationContextAwareProcessor 自定义的组件注入 ApplicationContext
+ * 	BeanValidationPostProcessor
+ * 	InitDestroyAnnotationBeanPostProcessor 生命周期注解功能
  *
  */
 @ComponentScan("com.atguigu.bean")

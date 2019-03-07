@@ -8,7 +8,10 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
-    <bean id="person" class="com.atguigu.bean.Person">
+
+    <context:property-placeholder location="classpath: person.properties"/>
+    <context:component-scan base-package="com.atguigu"/>
+    <bean id="person" class="com.atguigu.bean.Person" scope="singleton" init-method="getAge" destroy-method="getName">
         <property name="age" value="11"></property>
         <property name="name" value="zhangsan"></property>
     </bean>

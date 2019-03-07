@@ -7,6 +7,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyBeanPostProcessor implements BeanPostProcessor {
 
+    /**
+     *
+     * @param o IOC容器创建的实例对象
+     * @param s IOC容器创建的实例的名称 id
+     * @return
+     * @throws BeansException
+     */
     @Override
     public Object postProcessBeforeInitialization(Object o, String s) throws BeansException {
         System.out.println("postProcessBeforeInitialization==>" + s);

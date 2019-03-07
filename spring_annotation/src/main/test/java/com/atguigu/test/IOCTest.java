@@ -35,8 +35,10 @@ public class IOCTest {
     public void testCondition(){
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfigTwo.class);
 
+        //动态获取当前操作系统 的名称
         System.out.println(applicationContext.getEnvironment().getProperty("os.name"));
 
+        //按照类型，获取该类型的所有bean 的名称
         String[] beanNamesForType = applicationContext.getBeanNamesForType(Person.class);
         for (String name:beanNamesForType) {
             System.out.println(name);

@@ -22,6 +22,7 @@ public class WindowsCondition implements Condition {
         ConfigurableListableBeanFactory beanFactory = conditionContext.getBeanFactory();//能获取到ioc使用的beanfactory
         ClassLoader classLoader = conditionContext.getClassLoader();//类加载器
         Environment environment = conditionContext.getEnvironment();//虚拟机运行环境
+        //可以判断容器中bean的注册情况，也可以给容器中注册bean
         BeanDefinitionRegistry registry = conditionContext.getRegistry();//获取到bean定义的注册类
 
         String osName = environment.getProperty("os.name");

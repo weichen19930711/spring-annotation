@@ -12,13 +12,13 @@ public class Car {
         System.out.println("Car...Construct...");
     }
 
-    //Post 置后
+    //Post 置后【构造器执行之后】
     @PostConstruct
     public void init(){
         System.out.println("Car...PostConstruct...");
     }
 
-    //Pre 置前
+    //Pre 置前 【bean销毁之前】
     @PreDestroy
     public void destroy(){
         System.out.println("Car...destroy...");

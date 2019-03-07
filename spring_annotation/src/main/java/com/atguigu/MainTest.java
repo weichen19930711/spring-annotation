@@ -9,7 +9,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainTest {
 
     public static void main(String[] args){
-        /*ApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("spring/spring-mvc.xml");
+        /*
+        从类路径 获取IOC容器
+        ApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("spring/spring-mvc.xml");
         System.out.println(classPathXmlApplicationContext.getBean("person"));*/
 
         ApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(MainConfig.class);

@@ -5,6 +5,7 @@ import com.atguigu.config.MainConfigOfPropertyValue;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.core.env.ConfigurableEnvironment;
 
 public class IOCTest_PropertyValue {
 
@@ -16,6 +17,10 @@ public class IOCTest_PropertyValue {
 
         Person person = applicationContext.getBean(Person.class);
         System.out.println(person);
+
+        //运行时的环境变量
+        ConfigurableEnvironment environment = applicationContext.getEnvironment();
+        System.out.println(environment.getProperty("person.nickName"));
 
         applicationContext.close();
     }

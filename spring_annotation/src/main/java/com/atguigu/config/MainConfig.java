@@ -24,12 +24,21 @@ import org.springframework.stereotype.Repository;
         @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {BookService.class}), //按照给定的类型 过滤
         @ComponentScan.Filter(type = FilterType.ASPECTJ), //按照ASPECTJ表达式 过滤
         @ComponentScan.Filter(type = FilterType.REGEX), //按照正则表达式 过滤*/
-        @ComponentScan.Filter(type = FilterType.CUSTOM, classes = {MyTypeFilter.class}) //按照自定义TypeFilter 过滤
+        @ComponentScan.Filter(type = FilterType.CUSTOM, classes = {MyTypeFilter.class}) //按照  自定义TypeFilter 过滤, 该包下的所有的类都会进行过滤
     }
 )
 public class MainConfig {
 
-    //给容器中注册一个Bean;类型为返回值的类型，id默认是用方法名作为id
+    //给容器中注册一个Bean; 类型为返回值的类型，id默认是用方法名作为id
+
+    /**
+     * <bean id="person" class="com.atguigu.bean.Person">
+        <property name="age" value="11"></property>
+        <property name="name" value="zhangsan"></property>
+     </bean>
+     * @return
+     */
+
     @Bean("person")
     public Person person0(){
         Person person = new Person();

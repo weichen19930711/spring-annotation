@@ -10,9 +10,18 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
     <context:property-placeholder location="classpath: person.properties"/>
+
+    <!-- @ComponentScan 包扫描 -->
     <context:component-scan base-package="com.atguigu"/>
+
+    <!-- @Bean -->
     <bean id="person" class="com.atguigu.bean.Person" scope="singleton" init-method="getAge" destroy-method="getName">
         <property name="age" value="11"></property>
         <property name="name" value="zhangsan"></property>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="suffix" value=".jsp"/>
     </bean>
 </beans>

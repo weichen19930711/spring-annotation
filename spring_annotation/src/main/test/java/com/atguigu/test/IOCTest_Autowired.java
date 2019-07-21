@@ -18,10 +18,10 @@ public class IOCTest_Autowired {
     public void testAutowired(){
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfigOfAutowired.class);
 
-        printAllBeanName(applicationContext);
+        //printAllBeanName(applicationContext);
 
         BookService bookService = applicationContext.getBean(BookService.class);
-        System.out.println("找到的bookDao:"+bookService);
+        System.out.println("通过Autowired找到的bookDao:"+bookService.getBookDao());
 
         /*BookDao bookDao = applicationContext.getBean(BookDao.class);
         System.out.println(bookDao);*/

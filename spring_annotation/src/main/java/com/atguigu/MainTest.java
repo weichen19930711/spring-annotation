@@ -14,6 +14,7 @@ public class MainTest {
         ApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("spring/spring-mvc.xml");
         System.out.println(classPathXmlApplicationContext.getBean("person"));*/
 
+        // 注解式的ApplicationContext
         ApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
         System.out.println(annotationConfigApplicationContext.getBean("person"));
 

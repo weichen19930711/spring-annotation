@@ -3,7 +3,12 @@ package com.atguigu.bean;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
-
+/*
+Cat...Construct...
+postProcessBeforeInitialization==>cat
+Cat...afterPropertiesSet...
+postProcessAfterInitialization==>cat
+ */
 @Component
 public class Cat implements InitializingBean, DisposableBean {
 

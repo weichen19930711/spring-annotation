@@ -17,11 +17,11 @@ public class MyTypeFilter implements TypeFilter {
     public boolean match(MetadataReader metadataReader, MetadataReaderFactory metadataReaderFactory) throws IOException {
         metadataReader.getAnnotationMetadata();//注解信息
         ClassMetadata classMetadata = metadataReader.getClassMetadata();//类信息
-        metadataReader.getResource();//获取当前类资源（类的路径）
+        metadataReader.getResource();//获取当前类资源（比如：类的路径）
 
         String className = classMetadata.getClassName();
         System.out.println("---->"+className);
-        if(className.contains("er")) return true;
+        if(className.contains("er") || className.contains("ok")) return true;
         return false;
     }
 }

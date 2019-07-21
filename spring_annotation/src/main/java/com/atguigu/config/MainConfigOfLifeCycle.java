@@ -43,16 +43,16 @@ import org.springframework.context.annotation.Configuration;
  *
  * 2）、通过 让Bean实现InitializingBean（定义初始化逻辑），DisposableBean（定义销毁逻辑）;
  *
- * 3）、可以使用JSR250；
+ * 3）、可以使用JSR250；Java规范
  * 		@PostConstruct：
  * 	    	在bean创建完成并且属性赋值完成；来执行初始化方法
  * 		@PreDestroy：
  * 	    	在 容器销毁bean之前 通知我们进行清理工作
  *
  * 4）、BeanPostProcessor【interface】：bean的后置处理器；
- * 		在bean初始化前后进行一些处理工作；
+ * 		在bean初始化（执行initMethod之前）前后进行一些处理工作；
  * 		postProcessBeforeInitialization:在初始化之前工作
- * 		postProcessAfterInitialization:在初始化之后工作
+ * 		postProcessAfterInitialization: 在初始化之后工作
  *
  * Spring底层对 BeanPostProcessor 的使用；
  * 		bean赋值，注入其他组件，@Autowired，生命周期注解功能，@Async,xxx BeanPostProcessor;
@@ -69,6 +69,6 @@ public class MainConfigOfLifeCycle {
 
     @Bean(initMethod = "init", destroyMethod = "destroy")
     public Dog dog(){
-       return new Dog();
+        return new Dog();
     }
 }

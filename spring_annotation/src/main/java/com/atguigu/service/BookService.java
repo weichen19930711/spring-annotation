@@ -13,10 +13,10 @@ import javax.inject.Inject;
 @Service
 public class BookService {
 
-    //@Qualifier("bookDao_")
-    //@Autowired(required = false)
+    @Qualifier("bookDao_")
+    @Autowired(required = false)
     //@Resource
-    @Inject
+//    @Inject
     private BookDao bookDao;
 
 }

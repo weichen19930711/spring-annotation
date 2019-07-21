@@ -5,8 +5,14 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+/*
+Car...Construct...
+postProcessBeforeInitialization==>car
+Car...PostConstruct...
+postProcessAfterInitialization==>car
+ */
 @Component
-public class Car {
+public class  Car {
 
     public Car(){
         System.out.println("Car...Construct...");

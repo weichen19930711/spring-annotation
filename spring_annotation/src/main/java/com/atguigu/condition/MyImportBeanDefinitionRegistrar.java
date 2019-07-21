@@ -21,6 +21,7 @@ public class MyImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegi
         boolean b2 = beanDefinitionRegistry.containsBeanDefinition("com.atguigu.bean.Red");
 
         if(b1 && b2) {
+            // 指定bean的定义信息，（bena的类型）
             BeanDefinition beanDefinition = new RootBeanDefinition(Rainbow.class);
             //指定bean 的名称 <bean> 的id
             beanDefinitionRegistry.registerBeanDefinition("rainbow", beanDefinition);

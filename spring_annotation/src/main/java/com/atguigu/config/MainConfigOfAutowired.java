@@ -3,16 +3,13 @@ package com.atguigu.config;
 import com.atguigu.bean.Car;
 import com.atguigu.bean.Color;
 import com.atguigu.dao.BookDao;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.*;
 
 /**
  * DI  Dependency Inject
  * IOC Inversion Of Control
  * 自动装配;
- * 		Spring利用依赖注入（DI），完成对IOC容器中中各个组件的依赖关系赋值；
+ * 		Spring利用依赖注入（DI），完成对IOC容器中各个组件的依赖关系赋值；
  *
  * 1）、@Autowired：自动注入：
  * 		1）、默认优先按照类型去容器中找对应的组件:applicationContext.getBean(BookDao.class);找到就赋值
@@ -29,12 +26,12 @@ import org.springframework.context.annotation.Primary;
  * 		}
  *
  * 2）、Spring还支持使用@Resource(JSR250)和@Inject(JSR330)[java规范的注解]
- * 		@Resource:
+ * 		@Resource: (name="")
  * 			可以和@Autowired一样实现自动装配功能；默认是按照组件名称进行装配的；
  * 			没有能支持@Primary功能没有支持@Autowired（reqiured=false）;
  * 		@Inject:
  * 			需要导入javax.inject的包，和Autowired的功能一样。没有required=false的功能；
- *  @Autowired:Spring定义的； @Resource、@Inject都是java规范
+ *  @Autowired: Spring定义的； @Resource、@Inject都是java规范
  *
  * AutowiredAnnotationBeanPostProcessor:解析完成自动装配功能；
  *
@@ -49,20 +46,18 @@ import org.springframework.context.annotation.Primary;
  * 		xxxAware：功能使用xxxProcessor；
  * 			ApplicationContextAware==》ApplicationContextAwareProcessor；
  *
- *
- * @author lfy
- *
  */
+@PropertySource("classpath:/person.properties")
 @Configuration
 @ComponentScan({"com.atguigu.controller","com.atguigu.service","com.atguigu.dao","com.atguigu.bean"})
 public class MainConfigOfAutowired {
 
     //@Primary
-    @Primary
+//    @Primary
     @Bean("bookDao_")
     public BookDao bookDao(){
         BookDao bookDao = new BookDao();
-        bookDao.setLabel("----");
+        bookDao.setLabel("222");
         return bookDao;
     }
 

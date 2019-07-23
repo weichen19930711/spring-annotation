@@ -1,0 +1,29 @@
+组件添加
+    @ComponentScan
+    @Bean
+    @Configuration
+    @Component
+    @Service
+    @Controller
+    @Repository
+    @Conditonal #
+    @Primary
+    @Lazy
+    @Scope
+    @Import #
+    ImportSelector
+    工厂模式
+
+组件赋值
+    @Value
+    @Autowired
+    @Qualifier
+    @Resources
+    @Inject
+    @PropertySource
+    @Profile
+
+组件注入
+    方法参数
+    构造器注入
+    xxxAware 注入spring底层组件

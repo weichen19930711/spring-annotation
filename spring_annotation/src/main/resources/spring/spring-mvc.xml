@@ -24,4 +24,7 @@
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
+    <!-- 开启基于注解版的 AOP -->
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 </beans>

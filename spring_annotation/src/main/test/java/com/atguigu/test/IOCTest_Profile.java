@@ -13,19 +13,19 @@ public class IOCTest_Profile {
     //2、代码的方式激活某种环境；
     @Test
     public void testProfile(){
-        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfigOfProfile.class);
-        printAllBeanName(applicationContext);
+        /*AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfigOfProfile.class);
+        printAllBeanName(applicationContext);*/
 
-//        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         //1、创建一个applicationContext
         //2、设置需要激活的环境
-        /*applicationContext.getEnvironment().setActiveProfiles("dev");
+        applicationContext.getEnvironment().setActiveProfiles("test");
         //3、注册主配置类
         applicationContext.register(MainConfigOfProfile.class);
         //4、启动刷新容器
         applicationContext.refresh();
         printAllBeanName(applicationContext);
-        applicationContext.close();*/
+//        applicationContext.close();
     }
 
     public void printAllBeanName(ApplicationContext applicationContext){

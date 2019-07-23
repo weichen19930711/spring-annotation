@@ -1,5 +1,6 @@
 package com.atguigu.config;
 
+import com.atguigu.bean.Yellow;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.EmbeddedValueResolverAware;
@@ -36,6 +37,12 @@ public class MainConfigOfProfile implements EmbeddedValueResolverAware{
     private String url;
     
     private String driverClass;
+
+    @Bean
+    public Yellow yellow() {
+        Yellow yellow = new Yellow();
+        return yellow;
+    }
 
     @Override
     public void setEmbeddedValueResolver(StringValueResolver stringValueResolver) {

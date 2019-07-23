@@ -34,7 +34,7 @@ import com.atguigu.aop.MathCalculator;
  * AOP原理：【看给容器中注册了什么组件，这个组件什么时候工作，这个组件的功能是什么？】
  * 		@EnableAspectJAutoProxy；
  * 1、@EnableAspectJAutoProxy是什么？
- * 		@Import(AspectJAutoProxyRegistrar.class)：给容器中导入AspectJAutoProxyRegistrar
+ * 		@Import(AspectJAutoProxyRegistrar.class)： 给容器中导入AspectJAutoProxyRegistrar
  * 			利用AspectJAutoProxyRegistrar自定义给容器中注册bean；BeanDefinetion
  * 			internalAutoProxyCreator=AnnotationAwareAspectJAutoProxyCreator
  *
@@ -109,8 +109,7 @@ bean = applyBeanPostProcessorsAfterInitialization(bean, beanName);
  * 1）、每一个bean创建之前，调用postProcessBeforeInstantiation()；
  * 		关心MathCalculator和LogAspect的创建
  * 		1）、判断当前bean是否在advisedBeans中（保存了所有需要增强bean）
- * 		2）、判断当前bean是否是基础类型的Advice、Pointcut、Advisor、AopInfrastructureBean，
- * 			或者是否是切面（@Aspect）
+ * 		2）、判断当前bean是否是 基础类型的Advice、Pointcut、Advisor、AopInfrastructureBean， 或者是否是切面（@Aspect）
  * 		3）、是否需要跳过
  * 			1）、获取候选的增强器（切面里面的通知方法）【List<Advisor> candidateAdvisors】
  * 				每一个封装的通知方法的增强器是 InstantiationModelAwarePointcutAdvisor；
@@ -140,14 +139,14 @@ bean = applyBeanPostProcessorsAfterInitialization(bean, beanName);
  * 		1）、CglibAopProxy.intercept();拦截目标方法的执行
  * 		2）、根据ProxyFactory对象获取将要执行的目标方法拦截器链；
  * 			List<Object> chain = this.advised.getInterceptorsAndDynamicInterceptionAdvice(method, targetClass);
- * 			1）、List<Object> interceptorList保存所有拦截器 5
- * 				一个默认的ExposeInvocationInterceptor 和 4个增强器；
- * 			2）、遍历所有的增强器，将其转为Interceptor；
- * 				registry.getInterceptors(advisor);
- * 			3）、将增强器转为List<MethodInterceptor>；
- * 				如果是MethodInterceptor，直接加入到集合中
- * 				如果不是，使用AdvisorAdapter将增强器转为MethodInterceptor；
- * 				转换完成返回MethodInterceptor数组；
+ * 			    1）、List<Object> interceptorList保存所有拦截器 5
+ * 				    一个默认的ExposeInvocationInterceptor 和 4个增强器；
+ * 			    2）、遍历所有的增强器，将其转为Interceptor；
+ * 				    registry.getInterceptors(advisor);
+ * 			    3）、将增强器转为List<MethodInterceptor>；
+ * 				    如果是MethodInterceptor，直接加入到集合中
+ * 				    如果不是，使用AdvisorAdapter将增强器转为MethodInterceptor；
+ * 				    转换完成返回MethodInterceptor数组；
  *
  * 		3）、如果没有拦截器链，直接执行目标方法;
  * 			拦截器链（每一个通知方法又被包装为方法拦截器，利用MethodInterceptor机制）

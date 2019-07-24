@@ -36,6 +36,8 @@ import com.atguigu.aop.MathCalculator;
  * 1、@EnableAspectJAutoProxy是什么？
  * 		@Import(AspectJAutoProxyRegistrar.class)： 给容器中导入AspectJAutoProxyRegistrar
  * 			利用AspectJAutoProxyRegistrar自定义给容器中注册bean；BeanDefinetion
+ * 		    id 是 "org.springframework.aop.config.internalAutoProxyCreator"
+ * 		    class 是 org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator
  * 			internalAutoProxyCreator=AnnotationAwareAspectJAutoProxyCreator
  *
  * 		给容器中注册一个AnnotationAwareAspectJAutoProxyCreator；
@@ -74,7 +76,7 @@ import com.atguigu.aop.MathCalculator;
  * 						2）、applyBeanPostProcessorsBeforeInitialization()：应用后置处理器的postProcessBeforeInitialization（）
  * 						3）、invokeInitMethods()；执行自定义的初始化方法
  * 						4）、applyBeanPostProcessorsAfterInitialization()；执行后置处理器的postProcessAfterInitialization（）；
- * 				4）、BeanPostProcessor(AnnotationAwareAspectJAutoProxyCreator)创建成功；--》aspectJAdvisorsBuilder
+ * 				4）、BeanPostProcessor(AnnotationAwareAspectJAutoProxyCreator initBeanFactory())创建成功；--》aspectJAdvisorsBuilder
  * 			7）、把BeanPostProcessor注册到BeanFactory中；
  * 				beanFactory.addBeanPostProcessor(postProcessor);
  * =======以上是创建和注册AnnotationAwareAspectJAutoProxyCreator的过程========

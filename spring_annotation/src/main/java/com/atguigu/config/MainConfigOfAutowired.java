@@ -28,7 +28,7 @@ import org.springframework.context.annotation.*;
  * 2）、Spring还支持使用@Resource(JSR250)和@Inject(JSR330)[java规范的注解]
  * 		@Resource: (name="")
  * 			可以和@Autowired一样实现自动装配功能；默认是按照组件名称进行装配的；
- * 			没有能支持@Primary功能没有支持@Autowired（reqiured=false）;
+ * 			没有能支持@Primary功能，没有支持@Autowired（reqiured=false）;
  * 		@Inject:
  * 			需要导入javax.inject的包，和Autowired的功能一样。没有required=false的功能；
  *  @Autowired: Spring定义的； @Resource、@Inject都是java规范
@@ -40,8 +40,8 @@ import org.springframework.context.annotation.*;
  * 		2）、[标在构造器上]：如果组件只有一个有参构造器，这个有参构造器的@Autowired可以省略，参数位置的组件还是可以自动从容器中获取
  * 		3）、放在参数位置：
  *
- * 4）、自定义组件想要使用Spring容器底层的一些组件（ApplicationContext，BeanFactory，xxx）；
- * 		自定义组件实现xxxAware；在创建对象的时候，会调用接口规定的方法注入相关组件；Aware；
+ * 4）、自定义组件 想要使用 Spring容器底层的一些组件（ApplicationContext，BeanFactory，xxx）；
+ * 		自定义组件 实现 xxxAware；在创建对象的时候，会调用接口规定的方法注入相关组件；Aware；
  * 		把Spring底层一些组件注入到自定义的Bean中；
  * 		xxxAware：功能使用xxxProcessor；
  * 			ApplicationContextAware==》ApplicationContextAwareProcessor；

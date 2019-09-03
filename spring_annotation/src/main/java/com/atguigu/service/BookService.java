@@ -10,13 +10,14 @@ import javax.annotation.Resource;
 import javax.inject.Inject;
 
 @Data
-@Service
+// @Service
 public class BookService {
 
-    @Qualifier("bookDao_")
-    @Autowired(required = false)
-    //@Resource
-//    @Inject
+    @Qualifier("bookDao")
+    // @Autowired(required = false)
+    // @Autowired
+    // @Resource(name = "bookDao_")
+    @Inject
     private BookDao bookDao;
 
 }

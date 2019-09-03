@@ -16,14 +16,20 @@ public class IOCTest_Ext {
     CommonUtils.print();
     Arrays.asList(annotationConfigApplicationContext.getBeanNamesForType(BeanFactoryPostProcessor.class)).forEach(beanName -> System.out.println(beanName));
     CommonUtils.print();
-    annotationConfigApplicationContext.publishEvent(new ApplicationEvent(new String("test")) {
+    //匿名 内部类
+    ApplicationEvent applicationEvent = new ApplicationEvent(new String("test")) {
       /*@Override
       public String toString() {
         System.out.println(super.toString());
         CommonUtils.print();
         return super.toString();
       }*/
-    });
+    };
+    System.out.println("applicationEvent: " + applicationEvent);
+    System.out.println("applicationEvent name: " + applicationEvent.getClass().getName());
+    System.out.println("applicationEvent simple name: " + applicationEvent.getClass().getSimpleName());
+    CommonUtils.print();
+    annotationConfigApplicationContext.publishEvent(applicationEvent);
     annotationConfigApplicationContext.close();
   }
 }

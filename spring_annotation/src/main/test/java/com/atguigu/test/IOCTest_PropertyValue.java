@@ -22,7 +22,6 @@ public class IOCTest_PropertyValue {
         ConfigurableEnvironment environment = applicationContext.getEnvironment();
         System.out.println(environment.getProperty("person.nickName"));
 
-        applicationContext.close();
     }
 
     public void printAllBeanName(ApplicationContext applicationContext){

@@ -3,10 +3,7 @@ package com.atguigu.test;
 import com.atguigu.bean.Boss;
 import com.atguigu.bean.Car;
 import com.atguigu.bean.Color;
-import com.atguigu.bean.Person;
 import com.atguigu.config.MainConfigOfAutowired;
-import com.atguigu.config.MainConfigOfPropertyValue;
-import com.atguigu.dao.BookDao;
 import com.atguigu.service.BookService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -21,21 +18,21 @@ public class IOCTest_Autowired {
         //printAllBeanName(applicationContext);
 
         BookService bookService = applicationContext.getBean(BookService.class);
-        System.out.println("通过Autowired找到的bookDao:"+bookService.getBookDao());
+        System.out.println("通过Autowired找到的bookDao:"+bookService);
 
         /*BookDao bookDao = applicationContext.getBean(BookDao.class);
         System.out.println(bookDao);*/
 
         Boss boss = applicationContext.getBean(Boss.class);
-        System.out.println(boss);
+        System.out.println("boss:" + boss);
 
         Color color = applicationContext.getBean(Color.class);
-        System.out.println(color);
+        System.out.println("color:" + color);
 
         Car car = applicationContext.getBean(Car.class);
-        System.out.println(car);
+        System.out.println("car:" + car);
 
-
+        printAllBeanName(applicationContext);
         applicationContext.close();
     }
 

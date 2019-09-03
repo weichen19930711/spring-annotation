@@ -15,9 +15,9 @@ public class AOPTest {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfigOfAop.class);
         printAllBeanName(applicationContext);
 
-        MathCalculator calculator = applicationContext.getBean(MathCalculator.class);
+        /*MathCalculator calculator = applicationContext.getBean(MathCalculator.class);
         calculator.div(1, 1);
-        applicationContext.close();
+        applicationContext.close();*/
     }
 
     public void printAllBeanName(ApplicationContext applicationContext){

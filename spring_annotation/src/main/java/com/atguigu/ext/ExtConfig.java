@@ -8,9 +8,11 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 扩展原理
  * BeanPostProcessor：bean后置处理器，bean创建对象初始化前后进行拦截工作的(initializeBean方法内部)
+ *
  * 1、BeanFactoryPostProcessor：beanFactory的后置处理器；
  * 		在BeanFactory标准初始化之后调用，来定制和修改BeanFactory的内容；
  * 		所有的bean定义已经保存加载到beanFactory，但是bean的实例还未创建
+ *
  * BeanFactoryPostProcessor原理:
  *  1)、ioc容器创建对象
  *  2)、invokeBeanFactoryPostProcessors(beanFactory);
@@ -21,9 +23,7 @@ import org.springframework.context.annotation.Configuration;
  * 2、BeanDefinitionRegistryPostProcessor extends BeanFactoryPostProcessor
  * 		postProcessBeanDefinitionRegistry();
  * 		在所有bean定义信息将要被加载，bean实例还未创建的；
- * 	* 2、BeanDefinitionRegistryPostProcessor extends BeanFactoryPostProcessor
- * 		postProcessBeanDefinitionRegistry();
- * 		在 所有bean定义信息  将要被加载，bean实例还未创建的；
+
  *
  * 		优先于BeanFactoryPostProcessor执行；
  * 		利用BeanDefinitionRegistryPostProcessor给容器中再额外添加一些组件；
@@ -43,15 +43,17 @@ import org.springframework.context.annotation.Configuration;
  *
  * 	 步骤：
  * 		1）、写一个监听器（ApplicationListener实现类）来监听某个事件（ApplicationEvent及其子类）
- * 			@EventListener;
- * 			原理：使用EventListenerMethodProcessor处理器来解析方法上的@EventListener；
- *
+   *
+ * 		  	@EventListener;
+   * 			原理：使用EventListenerMethodProcessor处理器来解析方法上的@EventListener；
  * 		2）、把监听器加入到容器；
+ *
  * 		3）、只要容器中有相关事件的发布，我们就能监听到这个事件；
- * 				ContextRefreshedEvent：容器刷新完成（所有bean都完全创建）会发布这个事件；
- * 				ContextClosedEvent：关闭容器会发布这个事件；
+ * 				  ContextRefreshedEvent：容器刷新完成（所有bean都完全创建）会发布这个事件；
+ * 				  ContextClosedEvent：关闭容器会发布这个事件；
+ *
  * 		4）、发布一个事件：
- * 				applicationContext.publishEvent()；
+ * 				applicationContext.publishEvent()
  *
  *  原理：
  *  	ContextRefreshedEvent、IOCTest_Ext$1[source=我发布的时间]、ContextClosedEvent；
@@ -59,7 +61,7 @@ import org.springframework.context.annotation.Configuration;
  *  	1）、容器创建对象：refresh()；
  *  	2）、finishRefresh();容器刷新完成会发布ContextRefreshedEvent事件
  *  2）、自己发布事件；
- *  3）、容器关闭会发布ContextClosedEvent；
+ *  3）、容器关闭会发布 ContextClosedEvent；
  *
  *  【事件发布流程】：
  *  	3）、publishEvent(new ContextRefreshedEvent(this));

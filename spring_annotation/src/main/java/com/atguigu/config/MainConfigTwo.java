@@ -11,7 +11,7 @@ import com.atguigu.condition.WindowsCondition;
 import org.springframework.context.annotation.*;
 //类中组件统一设置，满足当前条件，这个类中配置的 所有bean注册才能生效
 @Conditional(WindowsCondition.class)
-@Import({Book.class, Blue.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
+@Import({Book.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
 @Configuration
 public class MainConfigTwo {
 

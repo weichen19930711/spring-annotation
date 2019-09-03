@@ -1,11 +1,16 @@
 package com.atguigu.proxyTest;
 
 import com.atguigu.proxy.Bird;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+@Component
 public class MyInvocationHandler implements InvocationHandler {
+
+  @Autowired
   private Bird bird;
 
   public MyInvocationHandler(Bird bird) {

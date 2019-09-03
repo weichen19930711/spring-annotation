@@ -29,6 +29,11 @@ public class IOCTest {
         Object person2 = applicationContext.getBean("person");
 
         System.out.println(person1 == person2);
+
+        String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
+        for (String name : beanDefinitionNames) {
+            System.out.println(name);
+        }
     }
 
     @Test
@@ -58,6 +63,7 @@ public class IOCTest {
         Object color2 = applicationContext.getBean("colorFactoryBean");
         System.out.println(color2.getClass());
         System.out.println(color1 == color2);
+
         Object colorFactoryBean = applicationContext.getBean("&colorFactoryBean");
         System.out.println(colorFactoryBean.getClass());
     }

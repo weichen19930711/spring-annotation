@@ -18,7 +18,7 @@ import org.springframework.stereotype.Repository;
         @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = {Controller.class, Repository.class})
     },*/
     //指定扫描的时候只需要包含那些组件
-    useDefaultFilters = false,
+//    useDefaultFilters = false,
     includeFilters = {
         /*@ComponentScan.Filter(type = FilterType.ANNOTATION, classes = {Controller.class, Repository.class}),//默认按照注解 过滤
         @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {BookService.class}), //按照给定的类型 过滤

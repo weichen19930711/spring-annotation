@@ -12,6 +12,6 @@ public class MyImportSelector implements ImportSelector {
     public String[] selectImports(AnnotationMetadata annotationMetadata) {
 
         //不能返回null
-        return new String[]{"com.atguigu.bean.color","com.atguigu.bean.red"};
+        return new String[]{"com.atguigu.bean.Blue"};
     }
 }

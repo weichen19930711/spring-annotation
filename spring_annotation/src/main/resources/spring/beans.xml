@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+  xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+  default-autowire="byType">
+
+  <bean id="list1" class="java.util.ArrayList">
+    <constructor-arg>
+      <list>
+        <value>foo</value>
+        <value>bar</value>
+      </list>
+    </constructor-arg>
+  </bean>
+  <bean id="listHolder1" class="com.atguigu.test.ListHolder"/>
+  <!--<bean id="testIgnore" class="com.atguigu.test.TestIgnore"/>-->
+  <bean id="ignoreInterface1" class="com.atguigu.test.IgnoreInterfaceImpl"/>
+  <bean id="IgnoreAutowiringProcessor1" class="com.atguigu.test.IgnoreAutowiringProcessor"/>
+  <bean id="userService" class="com.atguigu.service.UserService"/>
+</beans>

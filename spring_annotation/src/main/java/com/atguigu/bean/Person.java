@@ -15,4 +15,12 @@ public class Person {
     private Integer age;
     @Value("${person.nickName}")
     private String nickName;
+
+    public Person() {
+
+    }
+
+    public Person(Integer age) {
+      this.age = age;
+    }
 }

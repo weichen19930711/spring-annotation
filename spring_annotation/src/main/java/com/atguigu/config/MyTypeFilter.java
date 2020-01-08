@@ -6,6 +6,8 @@ import org.springframework.core.type.classreading.MetadataReaderFactory;
 import org.springframework.core.type.filter.TypeFilter;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 public class MyTypeFilter implements TypeFilter {
 
@@ -21,7 +23,15 @@ public class MyTypeFilter implements TypeFilter {
 
         String className = classMetadata.getClassName();
         System.out.println("---->"+className);
-        if(className.contains("er") || className.contains("ok")) return true;
+        String[] arrs = {"er", "ok"};
+        if(some(Arrays.asList(arrs), className)) return true;
         return false;
+    }
+
+    public boolean some(List<String> arrs, String className) {
+        return arrs.stream().anyMatch(x -> {
+            System.out.println(x);
+            return className.contains(x);
+        });
     }
 }

@@ -17,19 +17,19 @@ public class MyTypeFilter implements TypeFilter {
      */
     @Override
     public boolean match(MetadataReader metadataReader, MetadataReaderFactory metadataReaderFactory) throws IOException {
-        metadataReader.getAnnotationMetadata();//注解信息
-        ClassMetadata classMetadata = metadataReader.getClassMetadata();//类信息
+        metadataReader.getAnnotationMetadata();//获取当前类注解的信息
+        ClassMetadata classMetadata = metadataReader.getClassMetadata();//获取当前正在扫描的类信息
         metadataReader.getResource();//获取当前类资源（比如：类的路径）
 
         String className = classMetadata.getClassName();
         System.out.println("---->"+className);
-        String[] arrs = {"er", "ok"};
-        if(some(Arrays.asList(arrs), className)) return true;
+        String[] arrays = {"er", "ok"};
+        if(some(Arrays.asList(arrays), className)) return true;
         return false;
     }
 
-    public boolean some(List<String> arrs, String className) {
-        return arrs.stream().anyMatch(x -> {
+    public boolean some(List<String> arrays, String className) {
+        return arrays.stream().anyMatch(x -> {
             System.out.println(x);
             return className.contains(x);
         });

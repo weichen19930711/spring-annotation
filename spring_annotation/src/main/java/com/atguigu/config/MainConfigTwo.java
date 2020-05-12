@@ -26,8 +26,8 @@ public class MainConfigTwo {
 	   		单实例bean：默认在容器启动的时候创建对象；
 	   		懒加载：容器启动不创建对象。第一次从容器中使用(获取)Bean创建对象，并初始化；
 
-	   	@Conditional 按照一定的条件进行判断，满足条件给容器中注册bean
-	   	    如果系统是windows，给容器中注册("bill")
+	   	  @Conditional 按照一定的条件进行判断，满足条件给容器中注册bean
+	   	      如果系统是windows，给容器中注册("bill")
             如果是linux系统，  给容器中注册("linus")
      */
     @Scope("singleton")

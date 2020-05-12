@@ -7,7 +7,7 @@ public class ColorFactoryBean implements FactoryBean<Color> {
 
     //返回一个Color对象，这个对象会添加到容器中
     @Override
-    public Color getObject() throws Exception {
+    public Color getObject()  {
         System.out.println("ColorFactoryBean...getObject...");
         return new Color();
     }

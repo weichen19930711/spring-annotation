@@ -49,7 +49,7 @@ import org.springframework.context.annotation.Configuration;
  * 		@PreDestroy：
  * 	    	在 容器销毁bean之前 通知我们进行清理工作
  *
- * 4）、BeanPostProcessor【interface】：bean的后置处理器；
+ * 4）、 【interface】：bean的后置处理器；
  * 		在bean初始化（执行initMethod之前）前后进行一些处理工作；
  * 		postProcessBeforeInitialization:在初始化之前工作
  * 		postProcessAfterInitialization: 在初始化之后工作

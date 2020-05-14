@@ -13,8 +13,8 @@ import org.springframework.context.annotation.*;
  * 		Spring利用依赖注入（DI），完成对IOC容器中各个组件的依赖关系赋值；
  *
  * 1）、@Autowired：自动注入：
- * 		1）、默认优先按照类型去容器中找对应的组件:applicationContext.getBean(BookDao.class);找到就赋值
- * 		2）、如果找到多个相同类型的组件，再将属性的名称作为组件的id去容器中查找
+ * 		1）、默认优先按照"类型"去容器中找对应的组件:applicationContext.getBean(BookDao.class);只要找到就赋值
+ * 		2）、如果找到多个相同"类型"的组件，再将"属性的名称"作为组件的id去容器中查找
  * 							applicationContext.getBean("bookDao")
  * 		3）、@Qualifier("bookDao")：使用@Qualifier指定需要装配的组件的id，而不是使用属性名
  * 		4）、自动装配    默认一定要将属性赋值好，没有就会报错；

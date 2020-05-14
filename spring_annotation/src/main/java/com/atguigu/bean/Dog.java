@@ -30,7 +30,7 @@ public class Dog implements BeanNameAware, EmbeddedValueResolverAware {
   private DefaultListableBeanFactory beanFactory;
 
   public Dog() {
-    System.out.println(beanFactory);
+    // System.out.println(beanFactory);
     System.out.println("Dog...Construct...");
   }
 

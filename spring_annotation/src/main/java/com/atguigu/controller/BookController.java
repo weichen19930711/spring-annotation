@@ -18,6 +18,7 @@ public class BookController {
 
     @PostConstruct
     public void postConstructor() {
+      bookService.toString();
       System.out.println("BookController...PostConstruct...");
     }
 }

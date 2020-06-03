@@ -1,3 +1,4 @@
+
 Spring容器的refresh()【创建刷新】;
 1、prepareRefresh()刷新前的预处理;
 	1）、initPropertySources()初始化一些属性设置;子类自定义个性化的属性设置方法; 【前提是AbstractApplicationContext的子类重写了这个方法】
@@ -140,7 +141,7 @@ Spring容器的refresh()【创建刷新】;
 						 		2）、是否自定义初始化方法;
 						 	4）、【执行后置处理器初始化之后】applyBeanPostProcessorsAfterInitialization
 						 		BeanPostProcessor.postProcessAfterInitialization();
-						 5）、注册Bean的销毁方法;
+						 5）、注册Bean的销毁方法;registerDisposableBeanIfNecessary
 					5）、将创建的Bean添加到缓存中singletonObjects;
 				ioc容器就是这些Map;很多的Map里面保存了单实例Bean，环境信息。。。。;
 		所有Bean都利用getBean创建完成以后;

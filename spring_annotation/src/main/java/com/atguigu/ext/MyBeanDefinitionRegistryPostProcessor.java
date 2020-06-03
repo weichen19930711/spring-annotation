@@ -28,8 +28,8 @@ public class MyBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegi
   public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
     System.out.println("postProcessBeanDefinitionRegistry：" + registry.getBeanDefinitionCount());
     Arrays.asList(registry.getBeanDefinitionNames()).forEach(name -> System.out.println(name));
-    AbstractBeanDefinition beanDefinition = BeanDefinitionBuilder.rootBeanDefinition(Blue.class).getBeanDefinition();
-    registry.registerBeanDefinition("blue_1", beanDefinition);
+    // AbstractBeanDefinition beanDefinition = BeanDefinitionBuilder.rootBeanDefinition(Blue.class).getBeanDefinition();
+    // registry.registerBeanDefinition("blue_1", beanDefinition);
     CommonUtils.print();
   }
 }

@@ -37,8 +37,9 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
  * 			AutoProxyRegistrar
  * 			ProxyTransactionManagementConfiguration
  * 2）、AutoProxyRegistrar：
- * 			给容器中注册一个 InfrastructureAdvisorAutoProxyCreator 组件；
+ * 			给容器中注册一个 InfrastructureAdvisorAutoProxyCreator 组件[org.springframework.aop.config.internalAutoProxyCreator]；
  * 			InfrastructureAdvisorAutoProxyCreator：？
+ * 			判断增强器 是否能用于 bean
  * 			利用后置处理器机制在对象创建以后，包装对象，返回一个代理对象（增强器），代理对象执行方法利用拦截器链进行调用；
  *
  *          userService 是代理类 ==》 MathCalculator

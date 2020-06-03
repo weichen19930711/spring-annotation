@@ -100,6 +100,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ExtConfig {
 
+  //instantiateUsingFactoryMethod
   @Bean
   public Blue blue() {
     return new Blue();
